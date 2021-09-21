@@ -3,7 +3,8 @@ $(document).ready( function () {
     alreadyLoadedTable = false;
     currentUserName = 'none';
     currentGame = '';
-    currentURL = "http://"+window.location.hostname +":"+PORT+"/api"
+    currentURL = "http://"+HOST+"/api"
+
 
     $('#login').click(function(e){
         e.preventDefault();
@@ -11,6 +12,8 @@ $(document).ready( function () {
         currentUserName = $('#username').val();
         typeOfUser = $('#type').val();
         apiURL = (typeOfUser === 'ADMINISTRATOR') ? (currentURL+'/admin') : (currentURL+'/login/' + currentUserName)
+        console.log(apiURL);
+
         $.ajax({
             url: apiURL,
             headers: {"Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "GET,OPTIONS", "Access-Control-Allow-Origin": apiURL, "Access-Control-Allow-Credentials": "true" },

@@ -28,16 +28,6 @@ spec:
           ports:
             - containerPort: {{ .Values.service.ports.port }}
               name: http
-          env:
-            - name: POSTGRES_SERVER
-              value: {{ .Values.postgresql.server | default (printf "%s-postgresql" ( .Release.Name )) | quote }}
-            - name: POSTGRES_USERNAME
-              value: {{ default "postgres" .Values.postgresql.postgresUser | quote }}
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Values.postgresql.secretName | default (printf "%s-postgresql" ( .Release.Name )) | quote }}
-                  key: {{ .Values.postgresql.secretKey }}
           readinessProbe:
             httpGet:
               path: {{ .Values.readinessProbe.path}}
