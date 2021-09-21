@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
 import java.util.Map;
@@ -24,7 +23,7 @@ public class PlayerServiceTest {
     private Database datatabase;
 
     @Autowired
-    private WordsService wordsService;
+    private WordsGeneratorService wordsGeneratorService;
 
     @Autowired
     private PlayerService userService;
@@ -66,8 +65,8 @@ public class PlayerServiceTest {
 
         Player player1 = new Player(username);
 
-        String randomWord = wordsService.getSecretWord();
-        String secretWord = wordsService.getVisibleWord(randomWord);
+        String randomWord = wordsGeneratorService.getSecretWord();
+        String secretWord = wordsGeneratorService.getVisibleWord(randomWord);
         Game game1 = new Game(player1, randomWord, secretWord);
         Game game2 = new Game(player1, randomWord, secretWord);
         player1.setCurrentGame(game1);

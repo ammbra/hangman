@@ -9,7 +9,7 @@ const {getHomePage} = require('./routes/index');
 var app = express();
 
 var port = 3000;
-var host = ("127.0.0.1" || "localhost" || "hangman");
+var host = ("127.0.0.1" || "localhost");
 // view engine setup
 app.set('port', port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render our view

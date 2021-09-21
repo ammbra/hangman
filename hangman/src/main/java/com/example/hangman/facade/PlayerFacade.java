@@ -6,7 +6,7 @@ import com.example.hangman.model.Status;
 import com.example.hangman.model.Player;
 import com.example.hangman.service.GameService;
 import com.example.hangman.service.PlayerService;
-import com.example.hangman.service.WordsService;
+import com.example.hangman.service.WordsGeneratorService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -19,9 +19,9 @@ public class PlayerFacade {
 
     private GameService gameService;
     private PlayerService playerService;
-    private WordsService wordsService;
+    private WordsGeneratorService wordsService;
 
-    public PlayerFacade(GameService gameService, PlayerService playerService, WordsService wordsService) {
+    public PlayerFacade(GameService gameService, PlayerService playerService, WordsGeneratorService wordsService) {
         this.gameService = gameService;
         this.playerService = playerService;
         this.wordsService = wordsService;

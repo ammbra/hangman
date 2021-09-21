@@ -11,6 +11,8 @@ ENV USER=appuser
 ENV UID=12345
 ENV GID=23456
 
+RUN apk --no-cache add curl
+
 RUN addgroup --gid "$GID" "$USER" \
     && adduser \
     --disabled-password \

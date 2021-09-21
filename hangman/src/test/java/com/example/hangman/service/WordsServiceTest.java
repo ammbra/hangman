@@ -14,18 +14,18 @@ import static org.hamcrest.Matchers.is;
 public class WordsServiceTest {
 
     @Autowired
-    private WordsService wordsService;
+    private WordsGeneratorService wordsGeneratorService;
 
     @Test
     public void getARandomWord(){
-        String randomWord = wordsService.getSecretWord();
-        assertThat(wordsService.availableWords, hasItem(randomWord));
+        String randomWord = wordsGeneratorService.getSecretWord();
+        assertThat(wordsGeneratorService.availableWords, hasItem(randomWord));
     }
 
     @Test
     public void givenAWordOfSixLettersThenGetSixHyphens(){
         String originalWord = "Marble";
-        String secretWord = wordsService.getVisibleWord(originalWord);
+        String secretWord = wordsGeneratorService.getVisibleWord(originalWord);
         String sixHyphens = "??????";
         assertThat(secretWord, is(sixHyphens));
     }

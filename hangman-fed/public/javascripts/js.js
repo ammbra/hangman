@@ -12,7 +12,6 @@ $(document).ready( function () {
         currentUserName = $('#username').val();
         typeOfUser = $('#type').val();
         apiURL = (typeOfUser === 'ADMINISTRATOR') ? (currentURL+'/admin') : (currentURL+'/login/' + currentUserName)
-        console.log(apiURL);
 
         $.ajax({
             url: apiURL,

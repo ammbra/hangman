@@ -4,7 +4,7 @@ module.exports = {
     getHomePage: (req, res) => {
 
     res.render("index.ejs", {
-        title: "Welcome to Hangman",
+        title: "Welcome to Hangman! Let's have fun!",
     });
 }
 };

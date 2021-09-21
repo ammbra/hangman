@@ -10,8 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Slf4j
 @Service
-public class WordsService {
-    public final static List<String> availableWords = Arrays.asList("TABLE", "CHAIR", "HOUSE", "LONDON", "DEVELOPER", "DATABASE", "JAVA");
+public class WordsGeneratorService {
+    public final static List<String> availableWords = Arrays.asList("NATIVE", "SUBATOMIC", "HOUSE", "SUPERSONIC", "DEVELOPER", "DATABASE", "JAVA");
 
     public String getSecretWord() {
         Integer randomIndex = ThreadLocalRandom.current().nextInt(0, availableWords.size());
