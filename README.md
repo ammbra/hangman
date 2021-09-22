@@ -3,7 +3,7 @@
 You can deploy this setup either locally (Minikube) or in your OpenShift Sandbox by simple issuing:
 
 ```shell script
-####Create namespace dev only if you wish to deploy in de
+####Create namespace dev only if you wish to deploy in this namespace. Otherwise you can use the project/namespace you wish
 kubectl create ns dev
 helm install hangman ./hangman/chart/hangman
 ```
