@@ -1,0 +1,67 @@
+<%- include('partials/header'); -%>
+<body class="text-center">
+<div class="container">
+    <div id="loginForm" class="form-auth">
+        <div class="mb-3">
+            <span class="h2 fw-normal align-middle">Sign In</span>
+        </div>
+        <div class="row mb-3">
+            <label for="username" class="col-sm-3 col-form-label col-form-label-sm">Username</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control form-control-sm" name="username" id="username"/>
+            </div>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" name="login" id="login">Login</button>
+        <p><a href="#" id="admin">Admin view</a></p>
+    </div>
+
+    <div class="row">
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand" href="index" id="welcome"></a>
+            <div class="navbar-nav mt-2 mt-lg-0" id="startGame">
+                <button class="btn btn-success" name="start" id="start">Continue</button>
+            </div>
+            <div class="nav navbar-nav my-2 my-lg-0" id="logoutForm">
+                <button class="btn btn-info" name="logout" id="logout">Logout</button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="gameView">
+        <div id="alert"></div>
+        <h3 id="play">Choose a letter to play: <span id="availableCharacters"></span></h3>
+        <h3>The Current Word is: <strong><span id="visibleWord"></span></strong></h3>
+        <br/>
+        <h3 id="attempts">You have <span id="attemptsLeft"></span> attempts left</h3>
+        <div class="alert alert-info" id="secretWord"></div>
+    </div>
+
+
+    <div id="adminView">
+        <h1>Current Status</h1>
+        <table id="playersTable" class="display">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Secret Word</th>
+                <th>Attempts left</th>
+                <th>Game Status</th>
+                <th>Game Started on</th>
+                <th>Game Ended on</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Username</th>
+                <th>Secret Word</th>
+                <th>Attempts left</th>
+                <th>Game Status</th>
+                <th>Game Started on</th>
+                <th>Game Ended on</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+</body>
+</html>
