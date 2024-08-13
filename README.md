@@ -14,7 +14,7 @@ Run the following script by specifying the name of the workspace you used to ins
 sh backend.sh dev
 ```
 
-Replace the result in hangman/hangman-fed/values.yaml:
+Replace the result in _frontend/chart/fed/values.yaml_:
 
 ```yaml script
 backend:
